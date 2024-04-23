@@ -1,7 +1,6 @@
 LICENSE
 MANIFEST.in
 README.md
-pyproject.toml
 setup.py
 notemgmt/__init__.py
 notemgmt/create_lecture_note.py

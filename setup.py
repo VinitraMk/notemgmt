@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name="notemgmt",
-    version="1.1.1",
+    version="1.2.0",
     description="a note management tool",
     url="https://github.com/VinitraMk/notemgmt",
     author="Vinitra Muralikrishnan",
