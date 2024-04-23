@@ -4,6 +4,14 @@ import shutil
 import re
 import datetime
 
+def lecstr2num(x):
+    doti = x.index('.')
+    dashi1 = x.index('_') + 1
+    dashi2 = x.index('l') - 1
+    part = int(x[doti-1])
+    lec_num = int(x[dashi1:dashi2])
+    return (lec_num, part)
+    
 def main():
 
     home_dir = os.path.expanduser('~')
@@ -21,16 +29,15 @@ def main():
     lec_title = args.lecture_title
     lec_date_str = lec_date.strftime("%B %d, %Y")
     all_lec_files = list(filter(lambda f: re.search(r,f), os.listdir(os.getcwd())))
-    all_lec_files.sort()
+    print(all_lec_files)
+    all_lec_nums = [lecstr2num(x) for x in all_lec_files]
+    all_lec_nums.sort()
     #print('all lec files', all_lec_files)
-    if len(all_lec_files) > 0:
-        llec = all_lec_files[-1]
-        weeksi = llec.index('_')
-        weekei = llec.find('_',weeksi+1)
-        lecsi = llec.find('_', weekei+1)
-        lecei = llec.find('.',lecsi+1)
-        week = int(llec[weeksi+1:weekei])
-        lec = int(llec[lecsi+1:lecei])
+    if len(all_lec_nums) > 0:
+        llec = all_lec_nums[-1]
+        week = llec[0]
+        lec = llec[1]
+        print('week', week, lec)
         if lec == 2:
             lec = 1
             week += 1
@@ -89,4 +96,3 @@ def main():
     with open(lec_fn, "w", encoding="utf-8") as fp:
         fp.writelines(data)
            
-
