@@ -29,7 +29,7 @@ def main():
     lec_title = args.lecture_title
     lec_date_str = lec_date.strftime("%B %d, %Y")
     all_lec_files = list(filter(lambda f: re.search(r,f), os.listdir(os.getcwd())))
-    print(all_lec_files)
+    #print(all_lec_files)
     all_lec_nums = [lecstr2num(x) for x in all_lec_files]
     all_lec_nums.sort()
     #print('all lec files', all_lec_files)
