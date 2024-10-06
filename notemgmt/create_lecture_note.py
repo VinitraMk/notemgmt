@@ -37,7 +37,7 @@ def main():
         llec = all_lec_nums[-1]
         week = llec[0]
         lec = llec[1]
-        print('week', week, lec)
+        print('Current week files:', 'Week - ', week, 'Lecture - ', lec)
         if lec == 2:
             lec = 1
             week += 1
@@ -72,7 +72,7 @@ def main():
         nnl = data[blocksi+2]
         #print(nl)
         #print(nnl)
-        sbcmd = "\subfile{\detokenize{"
+        sbcmd = "\\subfile{\\detokenize{"
         ebcmd = "}}"
         fcmd = f'{sbcmd}{lec_fn}{ebcmd}\n'
         if nl == '% end lecture files block\n':

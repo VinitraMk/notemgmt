@@ -3,6 +3,7 @@ MANIFEST.in
 README.md
 setup.py
 notemgmt/__init__.py
+notemgmt/create_answer_note.py
 notemgmt/create_lecture_note.py
 notemgmt.egg-info/PKG-INFO
 notemgmt.egg-info/SOURCES.txt
